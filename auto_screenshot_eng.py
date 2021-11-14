@@ -31,4 +31,4 @@ while status:
     time.sleep(wait_beetwen_screen)
 
     i+=1
-print('Remember to copy screenshot to safe location. You may accidentaly overwrite it.')
+print('Remember to copy screenshots to safe location. You may accidentaly overwrite it.')
