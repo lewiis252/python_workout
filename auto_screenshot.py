@@ -25,10 +25,13 @@ while status:
         status = False
     my_screen_shot = pyautogui.screenshot()
     file_num = str(i)
-    my_screen_shot.save(f'{lecture_title}\{str(lecture_title)}_{file_num}.png')
+    my_screen_shot.save('{}\{}_{}.png'.format(lecture_title, str(lecture_title), file_num))
     print('screenshot saved')
 
     time.sleep(wait_beetwen_screen)
 
     i+=1
 print('Pamiętaj skopiować screeny w bezpieczne miejsce, nie chcesz przypadkiem ich nadpisać!!!')
+time.sleep(30)
+a = input()
+
