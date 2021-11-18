@@ -25,7 +25,7 @@ while status:
         status = False
     my_screen_shot = pyautogui.screenshot()
     file_num = str(i)
-    my_screen_shot.save('{}\{}_{}.png'.format(lecture_title, str(lecture_title), file_num))
+    my_screen_shot.save(f'{lecture_title}\{str(lecture_title)}_{file_num}.png')
     print('screenshot saved')
 
     time.sleep(wait_beetwen_screen)
