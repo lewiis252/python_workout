@@ -50,10 +50,11 @@ while status:
         previous_img = (np.asarray(Image.open(f'{lecture_title}/{str(lecture_title)}_{previous_file_num}.png')))
         current_img = (np.asarray(Image.open(f'{lecture_title}/{str(lecture_title)}_{file_num}.png')))
 
-        dist_euclidean = np.sqrt(np.sum((previous_img - current_img) ^ 2)) / current_img.shape
-        print(dist_euclidean)
+        similarity = np.sum(np.equal(previous_img, current_img)) / np.ma.size(current_img)
+        print(similarity)
 
-        if np.array_equal(previous_img, current_img):
+        similarity_treshold = 0.998
+        if similarity > similarity_treshold:
             os.remove(f'{lecture_title}/{str(lecture_title)}_{file_num}.png')
             print('Kopia poprzedniego zrzutu usunięta')
 
