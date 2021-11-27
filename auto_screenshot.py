@@ -32,3 +32,6 @@ while status:
 
     i+=1
 print('Pamiętaj skopiować screeny w bezpieczne miejsce, nie chcesz przypadkiem ich nadpisać!!!')
+time.sleep(30)
+a = input()
+
