@@ -48,9 +48,9 @@ while status:
         previous_img = (np.asarray(Image.open(f'{lecture_title}/{str(lecture_title)}_{previous_file_num}.png')))
         current_img = (np.asarray(Image.open(f'{lecture_title}/{str(lecture_title)}_{file_num}.png')))
 
-
+        # percentage comparision of similarity
         similarity = np.sum(np.equal(previous_img, current_img)) / np.ma.size(current_img)
-        print(similarity)
+        # print(similarity)
 
         similarity_treshold = 0.998
         if similarity > similarity_treshold:

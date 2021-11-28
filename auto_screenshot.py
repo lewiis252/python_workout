@@ -13,7 +13,7 @@ wait_beetwen_screen = float(input('Co ile sekund wykonać screenshot? : '))
 
 if not os.path.exists(lecture_title):
     os.mkdir(lecture_title)
-    print("Directory " , lecture_title ,  " Created ")
+    print("Folder " , lecture_title ,  " utworzony")
 else:
     print("Taki folder " , lecture_title ,  " już istnieje!!!! Nadpiszę dane!!! Kontynuować?")
     answer = input('[tak]/[nie]: ')
@@ -50,8 +50,9 @@ while status:
         previous_img = (np.asarray(Image.open(f'{lecture_title}/{str(lecture_title)}_{previous_file_num}.png')))
         current_img = (np.asarray(Image.open(f'{lecture_title}/{str(lecture_title)}_{file_num}.png')))
 
+        # percentage comparision of similarity
         similarity = np.sum(np.equal(previous_img, current_img)) / np.ma.size(current_img)
-        print(similarity)
+        # print(similarity)
 
         similarity_treshold = 0.998
         if similarity > similarity_treshold:
