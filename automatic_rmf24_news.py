@@ -30,9 +30,25 @@ for link in soup.find_all('a'):
 # links = np.sort(links)
 # print(links)
 
+
+
 correct_links = np.array([])
+ignore_list = ['/raporty/raport-koronawirus-z-chin/szczepienia-przeciw-covid19',
+               '/raporty/raport-stan-wyjatkowy',
+               '/raporty/raport-koronawirus-z-chin/najnowsze-fakty',
+               '/fakty/swiat',
+               '/raporty/raport-koronawirus-z-chin/polska',
+               '/raporty/raport-koronawirus-z-chin/komentarze-ekspertow',
+               '/fakty/polska',
+               '/raporty/raport-koronawirus-z-chin/gospodarka',
+               '/raporty/raport-koronawirus-z-chin/europa',
+               '/raporty/raport-koronawirus-z-chin/porady',
+               '/raporty/raport-lepsze-jutro'
+               ]
 for link in links:
     if link.startswith('/raporty/raport') or link.startswith('/fakty/'):
+        if link in ignore_list:
+            continue
         link =  'https://www.rmf24.pl' + link
         correct_links = np.append(correct_links, link)
 
@@ -48,6 +64,8 @@ page_soup = BeautifulSoup(test_page.content, 'html.parser')
 # pprint(page_soup)
 
 for correct_link in correct_links:
+    if correct_link in ignore_list:
+        continue
     # print('\n')
     # print(correct_link)
     test_page = requests.get(correct_link)

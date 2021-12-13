@@ -1,8 +1,10 @@
 import math
+import random
 
-numbers = [1,2,3,4,5,6,7,8,9]
+numbers = [random.randint(-1000,1000) for i in range(1000)]
+
 numbers.sort()
-
+print(numbers)
 target = 5
 
 start = 0

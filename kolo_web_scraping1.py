@@ -16,7 +16,7 @@ parsed = BeautifulSoup(html, 'html.parser')
 
 tab = parsed.find_all('tr')
 
-# pprint(tab)
+pprint(tab)
 
 wynik = []
 for row in tab:
@@ -26,4 +26,4 @@ for row in tab:
             wynik.append(row)
         # pprint(lokalizacja.text)
 
-print(wynik)
+# print(wynik)
